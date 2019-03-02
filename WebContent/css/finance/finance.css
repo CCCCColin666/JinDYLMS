@@ -146,25 +146,125 @@
 #div2_flex{
 	display: flex;
 }
-#div2_function{
+#div2_function1{
 	margin-top:6px;
 	margin-left:6px;
 	width:1200px;
 	height:600px;
 	border: 1px solid black;
+	display: none;
+}
+#div2_function2{
+	margin-top:6px;
+	margin-left:6px;
+	width:1200px;
+	height:600px;
+	border: 1px solid black;
+	display: none;
 }
 #div2_headline{
 	width:100px;
 	margin-top:30px;
 	margin-left:80px;
-	border-bottom: 2px solid #2E3B46;
+	border-bottom: 2px solid #21988B;
+	color:#2E3B46;
+}
+#div2_headline2{
+	width:100px;
+	margin-top:30px;
+	margin-left:80px;
+	border-bottom: 2px solid #21988B;
 	color:#2E3B46;
 }
 #invoice{
-	border: 1px solid red;
 	width:500px;
 	margin:150px auto;
 }
+#invoice input{
+	width:180px;
+	outline: none;
+	border:0px;
+	font-size:14px;
+	text-align: center;
+	font-family: "Î¢ÈíÑÅºÚ";
+}
 #invoice>table{
-	
+	margin-top:-80px;
+	margin-left:-150px;
+	width:600px;
+	height:250px;
+}
+#invoice th{
+	border:1px solid #0A5F58;
+}
+#invoice td{
+	background-color: white;
+	text-align: center;
+	width:180px;
+	border:1px solid #0A5F58;
+}
+#invoice tr{
+	background-color: #21988B;
+	color:white;
+}
+#submit{
+	border: 3px solid #21988B;
+	color: white;
+	font-weight:bold;
+	background-color:#21988B;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-left: 470px;
+	margin-top: -33px;
+}
+#submit:hover{
+	background-color: #0A5F58;
+	color: white;
+	font-weight: bold;
+}
+#select{
+	margin:30px auto;
+	width:370px;
+}
+#select_button{
+	border: 3px solid #21988B;
+	color: white;
+	font-weight:bold;
+	background-color:#21988B;
+	width: 60px;
+	height: 29px;
+	line-height: 30px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: -5px;
+}
+#select_button:hover{
+	background-color: #0A5F58;
+	color: white;
+	font-weight: bold;
+}
+#select>input{
+	outline: none;
+	font-size:24px;
+	border:2px solid #21988B;
+}
+#div2_function2 span{
+	margin-left: 25%;
+}
+#tip1{
+	color:#7C7979;
+	display: none;
+}
+#detail{
+	border:1px solid #21988B;
+	margin:auto;
+	width:800px;
+	height:360px;
 }
