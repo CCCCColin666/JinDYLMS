@@ -1,0 +1,170 @@
+*{
+	margin: 0px;
+}
+#div1{
+	margin-top: 10px;
+	border-bottom: 1px solid #C1C1C1;
+	width: 100%;
+	height: 110px;
+	box-shadow: 1px 1px 3px 1px #C1C1C1
+}
+#div2{
+	width: 100%;
+	height: 900px;
+	background-color: #F0F0F0;
+}
+#div1_flex{
+	width:1400px;
+	display: flex;
+	justify-content: flex-start;
+}
+#blank3{
+	background-color: #F8643C;
+}
+.div1_title{
+	width: 110px;
+	height: 110px;
+	text-align: center;
+	line-height: 110px;
+	font-family: "ºÚÌå";
+	color: white;
+	font-size: 21px;
+	cursor: pointer;
+	background-color: #F8643C;
+}
+.div1_title:hover{
+	color: #2C2B28;
+	font-size: 22px;
+}
+#brand{
+	background: url(../../img/finance/logo.bmp);
+	width: 110px;
+	height: 100px;
+	margin-left: -10px;
+	background-size: 100% 90%;
+	background-color: #F8643C;
+	background-position-x: 10px;
+}
+#blank1{
+	width: 100px;
+	height: 90px;
+	border-radius:0 0 100% 0;
+    background:white;
+}
+#blank2{
+	width: 100%;
+	height: 20px;
+    background:#F8643C;
+    position: relative;
+    left: -100px;
+    top: 90px;
+}
+#logout{
+	border: 2px solid #F8643C;
+	color: #F8643C;
+	width: 60px;
+	height: 30px;
+	margin-left: 400px;
+	margin-top: 10px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#help{
+	border: 2px solid #F8643C;
+	color: #F8643C;
+	width: 60px;
+	height: 30px;
+	margin-left: 20px;
+	margin-top: 10px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#help:hover{
+	background-color: #F8643C;
+	color: white;
+}
+#logout:hover{
+	background-color: #F8643C;
+	color: white;
+}
+#slogen{
+	width: 350px;
+	height: 50px;
+	border-bottom: 1px solid #C1C1C1;
+	margin-top: -51px;
+	margin-left: 900px;
+	background: url(../../img/finance/slogen.bmp);
+	background-size: 100% 100%;
+}
+#div2{
+	margin-top: 5px;
+}
+#userinfo{
+	background-color: #1A2732;
+	width: 100%;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	line-height: 40px;
+	text-align: right;
+}
+#div1_menu{
+	width: 200px;
+	height: 600px;
+	margin-top: 5px;
+	display: flex;
+	flex-direction: column;
+	border-right:1px solid #2E3B46;
+}
+.option{
+	background-color: #2E3B46;
+	height: 50px;
+	padding-left: 30px;
+	line-height: 50px;
+	margin-bottom: 1px;
+	cursor: pointer;
+	color: white;
+	font-size: 20px;
+}
+.option_child{
+	background-color: #394A59;
+	width: 100%;
+	height: 35px;
+	margin-bottom: 1px;
+	text-align: center;
+	line-height: 35px;
+	color: white;
+	cursor: pointer;
+	display: none;
+}
+#div2_flex{
+	display: flex;
+}
+#div2_function{
+	margin-top:6px;
+	margin-left:6px;
+	width:1200px;
+	height:600px;
+	border: 1px solid black;
+}
+#div2_headline{
+	width:100px;
+	margin-top:30px;
+	margin-left:80px;
+	border-bottom: 2px solid #2E3B46;
+	color:#2E3B46;
+}
+#invoice{
+	border: 1px solid red;
+	width:500px;
+	margin:150px auto;
+}
+#invoice>table{
+	
+}
