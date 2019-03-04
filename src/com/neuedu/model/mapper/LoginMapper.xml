@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace对应接口的全类名 -->
+<mapper namespace="com.neuedu.model.mapper.LoginMapper">
+	<!-- 查询活动信息 -->
+	<select id="selectUser"   parameterType="map"  resultType="User" >
+		select * from User where username=#{username} and password =#{password}
+	</select>
+	
+</mapper>

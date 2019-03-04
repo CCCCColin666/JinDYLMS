@@ -7,7 +7,10 @@ public class User {
 	private String password;
 	private String position;
 	
+<<<<<<< HEAD
+=======
 	
+>>>>>>> branch 'master' of https://github.com/CCCCColin666/JinDYLMS.git
 	public int getUserid() {
 		return userid;
 	}
