@@ -136,6 +136,7 @@ $(function(){
 			}
 		})		
 	})
+	
 	//查询商品
 	$(document).on("click",".two",function(){
 		var twid =$(this).attr("data_id");
