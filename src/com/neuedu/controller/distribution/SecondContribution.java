@@ -18,5 +18,14 @@ public class SecondContribution {
 	public @ResponseBody List<Second> SecondAll(int fid){
 		return secondService.saveSecond(fid);
 	}
+	@RequestMapping("updateSecond")
+	public @ResponseBody void UpdateSecond(Second second){
+		secondService.updateSecond(second);
+	} 
+	@RequestMapping("insetSecond")
+	public @ResponseBody void InsetSecond(Second second){
+		System.out.println(second.getSddescription());
+		secondService.insetSecond(second);
+	}
 
 }

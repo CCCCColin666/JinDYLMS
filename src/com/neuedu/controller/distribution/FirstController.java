@@ -16,7 +16,6 @@ public class FirstController {
 	private FirstService firstService;
 	@RequestMapping("AAAAA")
 	public @ResponseBody List<First> FirstAll(){
-		System.out.println("=================8798");
 		return firstService.selectFristAll();
 	}
 	@RequestMapping("insertFirst")

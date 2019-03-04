@@ -1,148 +1,196 @@
-ï»¿.fz12{font-size:12px;}
-.main{padding-bottom:60px; padding-top:36px;}
-.main h1,
-.main h2,
-.main h3{padding-left:10px;}
-.main h1{text-align:center;color: #212222; font-family: "microsoft yahei"; font-size: 36px; font-weight: normal; line-height: 2em; margin-bottom: 36px;}
-.main h2{background-color:#eee; line-height:2!important;}
-.main h3{font-size:20px; margin-bottom:10px;}
-.lireset2{padding-left:10px;}
-.registerform{margin-bottom:40px;}
-.registerform .need{
-	width:10px;
-	color:#b20202;
-}
-.registerform td{
-	padding:5px 0;
-	vertical-align:top;
-	text-align:left;
-}
-.registerform .inputxt,.registerform textarea{
-	border:1px solid #a5aeb6;
-	width:196px;
-	padding:4px 2px;
-}
-.registerform textarea{
-	height:75px;
+/* »ù±¾ÑùÊ½ */
+* {
+	margin: 0px;/*¿Ø¼þµÄÍâ±ß¾àÉèÖÃ*/
+	padding: 0px;/*¿Ø¼þÄÚ±ß¾àÉèÖÃ*/
 }
 
-.registerform .tip{
-	line-height:20px;
-	color:#5f6a72;
+ body {   
+ 	background: #F3F6F9;
+/*	background:url(../images/main_06.gif); /*±³¾°ÑÕÉ«*/
+/*	margin: 15; /*ËÄ¸ö±ßµÄÍâÑÓ±ß¾à*/
 }
-.registerform select{
-	width:202px;
+
+body,table,th,td,input,select,textarea {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 }
-.registerformalter select{
-	width:124px;
+
+/* ³¬Á´½Ó */
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
 }
-.swfupload{
-	vertical-align:top;
+
+/*µã»÷³¬Á´½ÓºóÑùÊ½*/
+a:link,a:visited {
+	color: #0044DD;
+	text-decoration: none;
 }
-.passwordStrength{
+
+/*Êó±êÍ£ÔÚ³¬Á´½ÓÉÏºÍµã»÷³¬Á´½ÓµÄÑùÊ½*/
+a:hover,a:active {
+	color: #FF5500;
+	text-decoration: underline;
+}
+
+/* ±í¸ñ:²éÑ¯Ñ¡Ïî */
+table.search{
+	border: 1px solid #3366CC;
+	background-color:#deebf7;
 
 }
-.passwordStrength b{
-	font-weight:normal;
-}
-.passwordStrength b,.passwordStrength span{
-	display:inline-block; 
-	vertical-align:middle;
-	line-height:16px;
-	line-height:18px\9;
-	height:16px;
-}
-.passwordStrength span{
-	width:45px; 
-	text-align:center; 
-	background-color:#d0d0d0; 
-	border-right:1px solid #fff;
-}
-.passwordStrength .last{
-	border-right:none;
-}
-.passwordStrength .bgStrength{
-	color:#fff;
-	background-color:#71b83d;
-}
-#demo1 .passwordStrength{
-	margin-left:8px;
-}
-.tipmsg{
-	padding:0 10px;
+/* ±í¸ñ:ÏÔÊ¾ÁÐ±íÊý¾Ý */
+table.default {
+	border: 1px solid #3366CC;
+	border-collapse: collapse; 
 }
 
 
+/* ±í¸ñ:Á´½Ó²Ù×÷*/
+table.link
+{
+	border:0px;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+}
+/* ±í¸ñ·ÖÒ³ */
+table.pagination{
+	border:0px;
+}
 
-.document{
-	min-height:800px;
+/*±íÍ·*/
+tr.title td{
+	font-weight: bold;
+	
+	background: #deebf7;
+	color: black; /*×ÖÌåÑÕÉ«*/
+	border: 1px ;
+	height: 25px;
+	border-bottom:#3366CC 1px solid;
 }
-.document .sidenav{
-	width:170px;
-	background-color:#eee;
-	padding:10px 10px 20px;
-}
-.document .sidenav h3{
-	font-size:14px;
-	padding:5px 10px;
-	background-color:#e1e1e1;
-}
-.document .sidenav a{
-	color:#1870a9;
-}
-.document .content{
-	width:750px;
-}
-.document .content dt{
-	background-color:#eee;
-    line-height:2;
-	padding:0 10px;
-}
-.document .content dt a{
-	color:#79a605;
-	padding:5px 0;
-	font-size:20px;
-	font-weight:bold;
-	display:block;
-}
-.document .content dt a:hover,
-.document .content h3 a:hover{text-decoration:none; cursor:default;}
-.document .content dd{
-	padding:15px 0;
-}
-.document .content h3{
-	color:#333;
-	font-size:16px;
-}
-.document .content p{
-	padding:0 0 16px 10px;
-	margin-bottom:0;
-}
-.document .content .intro{
-	margin-bottom:16px;
-}
-.document .content .intro p{
-	padding-bottom:0;
-}
-.document .content .intro pre{padding-left:10px;}
-.document .content .wp_syntax{
-	margin-left:10px;
-	margin-right:10px;
-}
-.document .sidenav .lireset2{padding-left:0;}
-.document .sidenav li ul{display:none;}
 
-.toTop {
-	display:block;
-	width:48px;
-	height:49px;
-	overflow:hidden;
-	text-indent:-20000px;
-	position:fixed;
-	right:15px;
-	bottom:20px;
-	display:none;
-	background:url(../images/totop.png) no-repeat;
-	_position:absolute;
-	_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight-20);
+/*ÆæÊýÐÐ*/
+tr.rowAlternateA  td {
+	background-color:#FFFFFF;
+	height: 25px;
 }
+/*Å¼ÊýÐÐ*/
+tr.rowAlternateB td {
+	background-color:#F2F8FF;
+	height: 25px;
+}
+
+td.item {
+	width: 30%
+	font-weight: bold;
+	text-align: right; /*Ë®Æ½¶ÔÆë·½Ê½*/
+	vertical-align: center; /*´¹Ö±¶ÔÆë·½Ê½*/
+	padding-top: 4px;
+}
+
+td.itemvalue {
+	width: 70%
+}
+
+/* °´Å¥ */
+.btn {
+	background: url("../images/btn_bg.gif");
+	background-repeat: repeat-x;
+	border: 3px double #333333;
+	border-color: #909090;
+	color: #333333;
+	padding: 0 2;
+	font-size: 12px;
+	height: 23px;
+	cursor: hand;
+	margin: 3px;
+}
+
+.tableheader {
+    PADDING-RIGHT: 4px;
+    PADDING-LEFT: 4px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    PADDING-BOTTOM: 4px;
+    COLOR: #333333;
+    PADDING-TOP: 4px;
+    BORDER-BOTTOM: #6E95A8 1px solid;
+    BACKGROUND-COLOR: #CADDE1;
+    TEXT-ALIGN: left
+}
+/* logo */
+body.logo{
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+table.logo{
+	height: 80px;
+	width: 100%;
+	border: 0px;
+	border-collapse: collapse;
+}
+
+td.logo{
+	background-image: url('../images/bg.gif');
+	text-align:center;
+	color: #f0b0dd;
+	font-family: »ªÎÄ²ÊÔÆ,¿¬Ìå_GB2312,ºÚÌå, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	text-indent: 30pt;
+}
+/* ²Ëµ¥Ò³ÃæµÄÑùÊ½ */
+table.menu {
+	width: 100%;
+	border: 0px solid #999999;
+	border-collapse: collapse; 
+	background-color: #ffffff;
+}
+
+table.menu td {
+	height: 20px;
+	border: 0px solid #ffffff;
+	background-color: #ffffff;
+}
+
+td.menu_title {
+	text-indent: 3pt;
+	color: #aaddcc;
+	font-size: 13px;
+	font-family:"ËÎÌå";
+}
+
+td.menu_item {
+	text-indent: 13pt;
+
+}
+/* °æÈ¨Ò³ÃæµÄÑùÊ½ */
+body.copy_right{
+	background-color: #F4F4F4; 
+	margin: 3px auto;
+	padding: 3px auto;
+}
+
+p.copy_right {
+	font-size: 10px; 
+	color: #666666; 
+	background-color: #F4F4F4; 
+	line-height: 5px;
+	text-align: center;
+	font-family:"ËÎÌå";
+}
+
+/* °´Å¥ */
+.button { 
+	font-size: 12px; 
+	color: #000000; 
+	cursor: hand; 
+	height: 20px; 
+	vertical-align: text-bottom;
+	background-color: #FFFFFF; 
+	background-image: url('../images/map_in.gif');
+	border: 1px solid #000000 
+	
+}
+
