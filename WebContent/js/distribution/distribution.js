@@ -128,15 +128,87 @@ $(function(){
 				var c="<div>二级分类</div>"
 					$(c).appendTo("#div3")
 				for(var i=0;i<data.length;i++){
-					var a ="<div class='first'><div class='one' data_id='"+data[i].sdid+"'>"+data[i].sdname+"</div><img class='shan' data_id='"+data[i].sdid+"' src='../../img/distribution/shan.png'/><img class='xiu' data_id='"+data[i].sdid+"' src= '../../img/distribution/xiu.png''/></div>"
+					var a ="<div class='first'><div class='two' data_id='"+data[i].sdid+"'>"+data[i].sdname+"</div><img class='shan2' data_id='"+data[i].sdid+"' src='../../img/distribution/shan.png'/><img class='xiu2' data_id='"+data[i].sdid+"' src= '../../img/distribution/xiu.png''/></div>"
 					$(a).appendTo("#div3")
 				}
-				var b ="<div id='To'>+添加</div>";
+				var b ="<div id='TT'>+添加</div>";
 				$(b).appendTo("#div3")
+				//添加二级分类
+				$("#TT").click(function(){
+					$("#div3").empty();
+					var a ="<div>"
+						+"<h3>添加二级分类</h3>"
+						+"名称：<input type='text' id='inp3'/></br>"
+						+"备注：<textarea rows='3' cols='20' id='text3'></textarea>"
+						+"</div></br>"
+						+"<button id='qd'>确定</button><button id='fh'>返回</button>";
+					$(a).appendTo("#tj");
+					$("#tj").show();
+					$("#qd").click(function(){
+						if($("#inp3").val()==""){
+							alert("请添加信息")
+						}else{
+							$.ajax({
+								type:"post",
+								url:"../../insetSecond",
+								data:{sdname:$("#inp3").val(),
+									sddescription:$("#text3").val(),
+									  fid:fid},
+								success:function(data){
+									alert("添加成功")
+									$("#div3").empty();
+									one();
+									$("#tj").empty();
+									$("#tj").hide();
+								}
+							})
+						}
+						
+					})
+					
+				})
 			}
 		})		
 	})
-	
+	//二级分类修改
+	$(document).on("click",".xiu2",function (){
+		var sdid=$(this).attr("data_id");
+		$("#div3").empty();
+		var a ="<div>"
+			+"<h3>修改二级分类</h3>"
+			+"名称：<input type='text' id='inp2'/></br>"
+			+"备注：<textarea rows='3' cols='20' id='text2'></textarea>"
+			+"</div></br>"
+			+"<button id='qd'>确定</button><button id='fh'>返回</button>";
+		$(a).appendTo("#tj");
+		$("#tj").show();
+		$("#qd").click(function(){
+			if($("#inp2").val()==""){
+				alert("请填写信息")
+			}else{
+				$.ajax({
+					type:"post",
+					url:"../../updateSecond",
+					data:{sdname:$("#inp2").val(),
+						sddescription:$("#text2").val(),
+						  sdid:sdid},
+					success:function(data){
+						alert("修改成功");
+						one();
+						$("#tj").empty();
+						$("#tj").hide();
+					}
+				})
+			}
+		})
+		$("#fh").click(function(){
+			$("#div3").empty();
+			one();
+			$("#tj").empty();
+			$("#tj").hide();
+		})
+		
+	})
 	//查询商品
 	$(document).on("click",".two",function(){
 		var twid =$(this).attr("data_id");

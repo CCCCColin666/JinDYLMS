@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.model.bean.First;
 import com.neuedu.model.mapper.distribution.FirstAllMapper;
-import com.neuedu.model.mapper.distribution.FirstDelete;
-import com.neuedu.model.mapper.distribution.FirstInsert;
-import com.neuedu.model.mapper.distribution.FirstUpdate;
+import com.neuedu.model.mapper.distribution.FirstDeleteMapper;
+import com.neuedu.model.mapper.distribution.FirstInsertMapper;
+import com.neuedu.model.mapper.distribution.FirstUpdateMapper;
 
 @Service
 public class FirstService {
@@ -20,17 +20,17 @@ public class FirstService {
 		return firstAllMapper.selectFirstAll();
 	}
 	@Autowired
-	private FirstInsert firstInsert;
+	private FirstInsertMapper firstInsert;
 	public void saveFirst(First first){
 		firstInsert.saveFirst(first);
 	}
 	@Autowired
-	private FirstDelete firstDelete;
+	private FirstDeleteMapper firstDelete;
 	public void deleteFirst(int fid){
 		firstDelete.DeleteFirst(fid);
 	}
 	@Autowired
-	private FirstUpdate firstUpdate;
+	private FirstUpdateMapper firstUpdate;
 	public void updateFirst(First first){
 		firstUpdate.UpdateFirst(first);
 	}

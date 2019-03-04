@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.neuedu.model.bean.Second;
 
-public interface SecondAll {
+public interface SecondAllMapper {
 	public List<Second> selectSecond(int fid);
 
 }
