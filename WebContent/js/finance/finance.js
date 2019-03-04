@@ -29,7 +29,7 @@ $(function(){
 			url:"../../selectInvoiceInfo",
 			type:"post",
 			success:function(data){
-				
+
 			}
 		});
 	});
