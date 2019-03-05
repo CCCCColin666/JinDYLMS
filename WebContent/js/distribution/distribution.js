@@ -67,14 +67,18 @@ $(function(){
 	})
 	//删除一级分类
 	$(document).on("click",".shan",function(){
-		$("#div3").empty();
 		var a=$(this).attr("data_id");
+		$("#div3").empty();
 		$.ajax({
 			type:"post",
 			url:"../../deleteFirst",
 			data:{fid:a},
 			success:function(data){
-				alert("删除成功");
+				if(data=="2"){
+					alert("不可以删除")
+				}else{
+					alert("删除成功");
+				}
 				one();
 			}
 		})
@@ -218,6 +222,7 @@ $(function(){
 		})
 		
 	})
+	//删除二级分类
 	$(document).on("click",".shan2",function(){
 		$("#div3").empty();
 		var a=$(this).attr("data_id");
@@ -226,7 +231,11 @@ $(function(){
 			url:"../../deleteSecond",
 			data:{sdid:a},
 			success:function(data){
-				alert("删除成功");
+				if(data=="2"){
+					alert("不可以删除")
+				}else{
+					alert("删除成功");
+				}
 				one();
 			}
 		})
@@ -250,9 +259,25 @@ $(function(){
 					var c="<div id='yj'>商品</div>"
 						$(c).appendTo("#div3")
 					for(var i=0;i<data.length;i++){
-						var a ="<div class='first'><div class='goods' data_id='"+data[i].meid+"'>"+data[i].mename+"</div><img class='shan2' data_id='"+data[i].meid+"' src='../../img/distribution/shan.png'/><img class='xiu2' data_id='"+data[i].meid+"' src= '../../img/distribution/xiu.png''/></div>"
+						var a ="<div class='first'><div class='goods' data_id='"+data[i].meid+"'>"+data[i].mename+"</div><img class='shan3' data_id='"+data[i].meid+"' src='../../img/distribution/shan.png'/><img class='xiu3' data_id='"+data[i].meid+"' src= '../../img/distribution/xiu.png''/></div>"
 						$(a).appendTo("#div3")
-					}
+					}					
+				}
+			}
+		})
+	})
+	$(document).on("click",".shan3",function(){
+		$("#div3").empty();
+		var meid = $(this).attr("data_id");
+		$.ajax({
+			type:"post",
+			url:"../../deleteMerchandise",
+			data:{meid:meid},
+			success:function(data){
+				if(data=="2"){
+					alert("有订单不可以删除")
+				}else{
+					alert("删除成功")
 				}
 			}
 		})

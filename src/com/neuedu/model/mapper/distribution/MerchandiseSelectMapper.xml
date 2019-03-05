@@ -6,4 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="MerchandiseSelect" resultType="Merchandise" parameterType="Map">
 		select * from merchandise where sdid=#{sdid} limit #{pagenum},#{pagesize}
 	</select>
+	<delete id="deleteMerchandise" parameterType="int">
+		delete from Merchandise where meid=#{meid}
+	</delete>
 </mapper>

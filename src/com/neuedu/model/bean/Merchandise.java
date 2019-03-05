@@ -15,6 +15,7 @@ public class Merchandise {
 	  private String isback;
 	  private String ischange;
 	  private String mes;
+	  private Second second;
 	  private List<Second> sdidw;
 	  private List<Supplier> sidw;
 	public int getMeid() {
@@ -100,6 +101,12 @@ public class Merchandise {
 	}
 	public void setSidw(List<Supplier> sidw) {
 		this.sidw = sidw;
+	}
+	public Second getSecond() {
+		return second;
+	}
+	public void setSecond(Second second) {
+		this.second = second;
 	}
 	  
 	  

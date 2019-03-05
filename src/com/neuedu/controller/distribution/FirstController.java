@@ -24,8 +24,8 @@ public class FirstController {
 		return "添加成功";
 	}
 	@RequestMapping("deleteFirst")
-	public @ResponseBody void deleteFirst(int fid){
-		firstService.deleteFirst(fid);
+	public @ResponseBody String deleteFirst(int fid){
+		return firstService.deleteFirst(fid);
 	}
 	@RequestMapping("updateFirst")
 	public @ResponseBody void updateFirst(First first){

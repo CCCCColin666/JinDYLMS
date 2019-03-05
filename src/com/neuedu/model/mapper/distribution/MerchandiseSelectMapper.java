@@ -7,5 +7,6 @@ import com.neuedu.model.bean.Merchandise;
 
 public interface MerchandiseSelectMapper {
 	public List<Merchandise> MerchandiseSelect(Map map);
+	public void deleteMerchandise(int meid);
 
 }

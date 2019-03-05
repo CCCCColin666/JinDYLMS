@@ -18,4 +18,10 @@ public class MerchandiseController {
 	public @ResponseBody List<Merchandise> SelectMerchandise(int sdid,int pagesize,int pagenum){
 		return MService.saveMerchandise(sdid, pagesize, pagenum);
 	}
+	@RequestMapping("deleteMerchandise")
+	public @ResponseBody String deleteMerchandise(int meid){
+		System.out.println("=======================================");
+		System.out.println(MService.deleteMerchandise(meid));
+		return MService.deleteMerchandise(meid);
+	}
 }

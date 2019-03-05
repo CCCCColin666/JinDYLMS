@@ -7,6 +7,7 @@ public class Second {
 	private String sdname;
 	private String sddescription;
 	private int fid;
+	private First first;
 	private List<Merchandise> me;
 	public int getSdid() {
 		return sdid;
@@ -37,6 +38,12 @@ public class Second {
 	}
 	public void setMe(List<Merchandise> me) {
 		this.me = me;
+	}
+	public First getFirst() {
+		return first;
+	}
+	public void setFirst(First first) {
+		this.first = first;
 	}
 	
 	

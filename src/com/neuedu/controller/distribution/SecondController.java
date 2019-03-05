@@ -27,8 +27,8 @@ public class SecondController {
 		secondService.insetSecond(second);
 	}
 	@RequestMapping("deleteSecond")
-	public @ResponseBody void deleteSecond(int sdid){
-		secondService.deletesecond(sdid);
+	public @ResponseBody String deleteSecond(int sdid){
+		return secondService.deletesecond(sdid);
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.neuedu.model.bean.First;
 import com.neuedu.model.mapper.distribution.FirstMapper;
+import com.neuedu.model.mapper.distribution.SecondAllMapper;
 
 
 @Service
@@ -14,14 +15,20 @@ public class FirstService {
 	@Autowired
 	private FirstMapper firstMapper;
 	public List<First> selectFristAll() {
-		// TODO Auto-generated method stub
 		return firstMapper.selectFirst();
 	}
 	public void saveFirst(First first){
 		firstMapper.saveFirst(first);
 	}
-	public void deleteFirst(int fid){
-		firstMapper.DeleteFirst(fid);
+	@Autowired
+	private SecondAllMapper secondAllMapper;
+	public String deleteFirst(int fid){
+		if(secondAllMapper.selectSecond(fid).size()>0){
+			return "2";
+		}else{
+			firstMapper.DeleteFirst(fid);
+			return "1";
+		}	
 	}
 	public void updateFirst(First first){
 		firstMapper.UpdateFirst(first);
