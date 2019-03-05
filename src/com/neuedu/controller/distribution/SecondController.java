@@ -11,7 +11,7 @@ import com.neuedu.model.bean.Second;
 import com.neuedu.model.service.distribution.SecondService;
 
 @Controller
-public class SecondContribution {
+public class SecondController {
 	@Autowired
 	private SecondService secondService;
 	@RequestMapping("twoAll")
@@ -24,8 +24,11 @@ public class SecondContribution {
 	} 
 	@RequestMapping("insetSecond")
 	public @ResponseBody void InsetSecond(Second second){
-		System.out.println(second.getSddescription());
 		secondService.insetSecond(second);
+	}
+	@RequestMapping("deleteSecond")
+	public @ResponseBody void deleteSecond(int sdid){
+		secondService.deletesecond(sdid);
 	}
 
 }

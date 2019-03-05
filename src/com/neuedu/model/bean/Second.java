@@ -1,10 +1,13 @@
 package com.neuedu.model.bean;
 
+import java.util.List;
+
 public class Second {
 	private int sdid;
 	private String sdname;
 	private String sddescription;
 	private int fid;
+	private List<Merchandise> me;
 	public int getSdid() {
 		return sdid;
 	}
@@ -29,6 +32,13 @@ public class Second {
 	public void setFid(int fid) {
 		this.fid = fid;
 	}
+	public List<Merchandise> getMe() {
+		return me;
+	}
+	public void setMe(List<Merchandise> me) {
+		this.me = me;
+	}
+	
 	
 
 }

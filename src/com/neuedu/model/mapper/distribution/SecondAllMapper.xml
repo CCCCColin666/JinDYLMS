@@ -6,4 +6,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectSecond" resultType="Second" parameterType="int">
 		select * from second where fid=#{fid}
 	</select>
+	<delete id="delstesecond" parameterType="int">
+		delete from second where sdid=#{sdid}
+	</delete>
+	<insert id="SecondInset" parameterType="Second">
+		insert into second(sdname,sddescription,fid) values(#{sdname},#{sddescription},#{fid})
+	</insert>
+		<update id="saveSecond" parameterType="Second">
+		update second set sdname=#{sdname} ,sddescription=#{sddescription} where sdid=#{sdid}
+	</update>
 </mapper>

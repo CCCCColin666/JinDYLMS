@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.model.mapper.distribution.FirstMapper">
+	<select id="selectFirst" resultType="First">
+		select * from first
+	</select>
+	<delete id="DeleteFirst" parameterType="int">
+		delete from first where fid=#{fid}
+	</delete>
+	<insert id="saveFirst" parameterType="First">
+		insert into first(fname,fdescription) values(#{fname},#{fdescription})
+	</insert>
+	<update id="UpdateFirst" parameterType="First">
+		update first set fname=#{fname} ,fdescription=#{fdescription} where fid=#{fid}
+	</update>
+</mapper>

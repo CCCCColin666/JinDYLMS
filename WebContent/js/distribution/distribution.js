@@ -5,10 +5,15 @@ $(function(){
 			url:"../../AAAAA",
 			dataType:"json",
 			success:function(data){
-				var c="<div>一级分类</div>"
+				var c="<div id='yj'>一级分类</div>"
 					$(c).appendTo("#div3")
 				for(var i=0;i<data.length;i++){
-					var a ="<div class='first'><div class='one' data_id='"+data[i].fid+"'>"+data[i].fname+"</div><img class='shan' data_id='"+data[i].fid+"' src='../../img/distribution/shan.png'/><img class='xiu' data_id='"+data[i].fid+"' src= '../../img/distribution/xiu.png'/></div>"
+					var a ="<div class='first'>" +
+							"<div class='one' data_id='"+data[i].fid+"'>"+data[i].fname+"</div>" +
+							"<img class='shan' data_id='"+data[i].fid+"'" +
+							" src='../../img/distribution/shan.png'/>" +
+							"<img class='xiu' data_id='"+data[i].fid+"'" +
+							" src= '../../img/distribution/xiu.png'/></div>"
 					$(a).appendTo("#div3")
 				}
 				var b ="<div id='To'>+添加</div>";
@@ -16,8 +21,6 @@ $(function(){
 			}
 		})
 	}
-	
-		
 	
 	//查询一级分类
 	$("#sp").click(function(){
@@ -116,7 +119,7 @@ $(function(){
 		
 	})
 	//查询二级分类
-	$(document).on("click",".one",function(){
+	$(document).on("click",".one",function two(){
 		$("#div3").empty();
 		var fid =$(this).attr("data_id");
 		$.ajax({
@@ -125,7 +128,7 @@ $(function(){
 			data:{fid:fid},
 			dataType:"json",
 			success:function(data){
-				var c="<div>二级分类</div>"
+				var c="<div id='yj'>二级分类</div>"
 					$(c).appendTo("#div3")
 				for(var i=0;i<data.length;i++){
 					var a ="<div class='first'><div class='two' data_id='"+data[i].sdid+"'>"+data[i].sdname+"</div><img class='shan2' data_id='"+data[i].sdid+"' src='../../img/distribution/shan.png'/><img class='xiu2' data_id='"+data[i].sdid+"' src= '../../img/distribution/xiu.png''/></div>"
@@ -164,6 +167,12 @@ $(function(){
 							})
 						}
 						
+					})
+					$("#fh").click(function(){
+						$("#div3").empty();
+						one();
+						$("#tj").empty();
+						$("#tj").hide();
 					})
 					
 				})
@@ -209,17 +218,41 @@ $(function(){
 		})
 		
 	})
-	//查询商品
-	$(document).on("click",".two",function(){
-		var twid =$(this).attr("data_id");
+	$(document).on("click",".shan2",function(){
+		$("#div3").empty();
+		var a=$(this).attr("data_id");
 		$.ajax({
 			type:"post",
-			url:"../../two/"+oneid,
+			url:"../../deleteSecond",
+			data:{sdid:a},
+			success:function(data){
+				alert("删除成功");
+				one();
+			}
+		})
+	})
+	//查询商品
+	$(document).on("click",".two",function(){
+		$("#div3").empty();
+		var sdid =$(this).attr("data_id");
+		var pagesize=2;
+		var pagenum =1;
+		$.ajax({
+			type:"post",
+			url:"../../SelectMerchandise",
 			dataType:"json",
+			data:{sdid:sdid,
+				  pagesize:pagesize,
+				  pagenum:pagenum
+				},
 			success:function(data){
 				for(var i=0;i<data.length;i++){
-					var a ="<div class='two' data_id='"+data[i].id+"'>"+data[i].name+"</div>"
-					$(a).appendTo("#填上id")
+					var c="<div id='yj'>商品</div>"
+						$(c).appendTo("#div3")
+					for(var i=0;i<data.length;i++){
+						var a ="<div class='first'><div class='goods' data_id='"+data[i].meid+"'>"+data[i].mename+"</div><img class='shan2' data_id='"+data[i].meid+"' src='../../img/distribution/shan.png'/><img class='xiu2' data_id='"+data[i].meid+"' src= '../../img/distribution/xiu.png''/></div>"
+						$(a).appendTo("#div3")
+					}
 				}
 			}
 		})

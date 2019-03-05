@@ -6,33 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neuedu.model.bean.First;
-import com.neuedu.model.mapper.distribution.FirstAllMapper;
-import com.neuedu.model.mapper.distribution.FirstDeleteMapper;
-import com.neuedu.model.mapper.distribution.FirstInsertMapper;
-import com.neuedu.model.mapper.distribution.FirstUpdateMapper;
+import com.neuedu.model.mapper.distribution.FirstMapper;
+
 
 @Service
 public class FirstService {
 	@Autowired
-	private FirstAllMapper firstAllMapper;
+	private FirstMapper firstMapper;
 	public List<First> selectFristAll() {
 		// TODO Auto-generated method stub
-		return firstAllMapper.selectFirstAll();
+		return firstMapper.selectFirst();
 	}
-	@Autowired
-	private FirstInsertMapper firstInsert;
 	public void saveFirst(First first){
-		firstInsert.saveFirst(first);
+		firstMapper.saveFirst(first);
 	}
-	@Autowired
-	private FirstDeleteMapper firstDelete;
 	public void deleteFirst(int fid){
-		firstDelete.DeleteFirst(fid);
+		firstMapper.DeleteFirst(fid);
 	}
-	@Autowired
-	private FirstUpdateMapper firstUpdate;
 	public void updateFirst(First first){
-		firstUpdate.UpdateFirst(first);
+		firstMapper.UpdateFirst(first);
 	}
 
 }
