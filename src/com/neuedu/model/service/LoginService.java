@@ -1,7 +1,6 @@
-package com.neuedu.model.service.LoginService;
+package com.neuedu.model.service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +12,16 @@ import com.neuedu.model.mapper.LoginMapper;
 public class LoginService {
 @Autowired
 private LoginMapper loginMapper;
-	public User selectUser(String username, String password) {
-		Map<String, Object> map = new HashMap();
+	public String selectUser(String username, String password) {
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("username",username);
 		map.put("password",password);
-		return loginMapper.selectUser(map);
+		User u =loginMapper.selectUser(map);
+		if(u!=null) {
+			return "1";
+		}else {
+			return "0";
+		}
 	}
 
 }

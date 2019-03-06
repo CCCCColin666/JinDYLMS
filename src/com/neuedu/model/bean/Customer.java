@@ -11,6 +11,7 @@ public class Customer {
 	private Integer postcode;
 	private String email;
 	
+	
 	public int getCid() {
 		return cid;
 	}

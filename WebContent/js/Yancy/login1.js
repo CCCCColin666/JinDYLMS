@@ -4,12 +4,17 @@ $(function(){
 		var password=$("#password").val();
 		alert(username)
 		alert(password)
+		
 			$.ajax({
 				type:"post",
 				url:"../../login/"+username+"/"+password, 
+				dataType:"json",
 				success:function(data){
-					alert("报名成功");
+					alert(data);
+					if(data=="1"){
+						window.location.href="main.html?username="+username+"&password="+password;
+					}
 				}
-			});
+			});	
 		})
-});
+     });
