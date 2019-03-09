@@ -8,16 +8,24 @@ public class Orderinfo {
 	private int orderid;
 	private String receivephone;
 	private String receiveadd;
-	private String itemquantit;
+	private String itemquantity;
 	private int itemprice;
 	private String orderstatus;
 	private String ordertype;
 	private String ordernote;
 	private Date generationdate;
+	private int itemid;
 	private List<User> ueridwo;
 	private List<Customer> cidwo;
-	private List<Merchandise> itemidwo;
+	private Merchandise itemidwo;
+	private Centerstorehouse cs;
 	
+	public Centerstorehouse getCs() {
+		return cs;
+	}
+	public void setCs(Centerstorehouse cs) {
+		this.cs = cs;
+	}
 	public int getOrderid() {
 		return orderid;
 	}
@@ -36,11 +44,12 @@ public class Orderinfo {
 	public void setReceiveadd(String receiveadd) {
 		this.receiveadd = receiveadd;
 	}
-	public String getItemquantit() {
-		return itemquantit;
+	
+	public String getItemquantity() {
+		return itemquantity;
 	}
-	public void setItemquantit(String itemquantit) {
-		this.itemquantit = itemquantit;
+	public void setItemquantity(String itemquantity) {
+		this.itemquantity = itemquantity;
 	}
 	public int getItemprice() {
 		return itemprice;
@@ -84,12 +93,19 @@ public class Orderinfo {
 	public void setCidwo(List<Customer> cidwo) {
 		this.cidwo = cidwo;
 	}
-	public List<Merchandise> getItemidwo() {
+	public Merchandise getItemidwo() {
 		return itemidwo;
 	}
-	public void setItemidwo(List<Merchandise> itemidwo) {
+	public void setItemidwo(Merchandise itemidwo) {
 		this.itemidwo = itemidwo;
 	}
+	public int getItemid() {
+		return itemid;
+	}
+	public void setItemid(int itemid) {
+		this.itemid = itemid;
+	}
+	
 	
 	
 	

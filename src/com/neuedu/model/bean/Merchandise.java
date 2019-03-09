@@ -6,8 +6,8 @@ public class Merchandise {
 	  private int meid;
 	  private String mename;
 	  private String measurement;
-	  private Double salepric;
-	  private Double buypric;
+	  private Double saleprice;
+	  private Double buyprice;
 	  private int mesrebate;	 	 
 	  private String kind;
 	  private String factory;
@@ -16,8 +16,17 @@ public class Merchandise {
 	  private String ischange;
 	  private String mes;
 	  private Second second;
-	  private List<Second> sdidw;
-	  private List<Supplier> sidw;
+	  private int sdid;
+	  private int sid;
+	  private Supplier sidw;
+	  private List<Lack_goods> lack;
+	  private Centerstorehouse cs;
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
 	public int getMeid() {
 		return meid;
 	}
@@ -36,17 +45,19 @@ public class Merchandise {
 	public void setMeasurement(String measurement) {
 		this.measurement = measurement;
 	}
-	public Double getSalepric() {
-		return salepric;
+	
+	
+	public Double getSaleprice() {
+		return saleprice;
 	}
-	public void setSalepric(Double salepric) {
-		this.salepric = salepric;
+	public void setSaleprice(Double saleprice) {
+		this.saleprice = saleprice;
 	}
-	public Double getBuypric() {
-		return buypric;
+	public Double getBuyprice() {
+		return buyprice;
 	}
-	public void setBuypric(Double buypric) {
-		this.buypric = buypric;
+	public void setBuyprice(Double buyprice) {
+		this.buyprice = buyprice;
 	}
 	public int getMesrebate() {
 		return mesrebate;
@@ -90,16 +101,11 @@ public class Merchandise {
 	public void setMes(String mes) {
 		this.mes = mes;
 	}
-	public List<Second> getSdidw() {
-		return sdidw;
-	}
-	public void setSdidw(List<Second> sdidw) {
-		this.sdidw = sdidw;
-	}
-	public List<Supplier> getSidw() {
+	
+	public Supplier getSidw() {
 		return sidw;
 	}
-	public void setSidw(List<Supplier> sidw) {
+	public void setSidw(Supplier sidw) {
 		this.sidw = sidw;
 	}
 	public Second getSecond() {
@@ -107,6 +113,12 @@ public class Merchandise {
 	}
 	public void setSecond(Second second) {
 		this.second = second;
+	}
+	public int getSdid() {
+		return sdid;
+	}
+	public void setSdid(int sdid) {
+		this.sdid = sdid;
 	}
 	  
 	  

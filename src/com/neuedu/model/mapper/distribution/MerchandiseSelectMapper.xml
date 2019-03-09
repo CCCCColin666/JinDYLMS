@@ -9,4 +9,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteMerchandise" parameterType="int">
 		delete from Merchandise where meid=#{meid}
 	</delete>
+	<select id="Merchandiseone" parameterType="Merchandise" resultType="Merchandise">
+		select * from merchandise where sdid=#{sdid} and mename=#{mename}
+	</select>
+	<select id="xqMerchandise" parameterType="int" resultMap="Merchandiseresult">
+		SELECT * FROM merchandise,second,first,supplier WHERE meid=#{meid}
+		 AND merchandise.sdid=second.sdid AND second.fid=first.fid
+		 and merchandise.sid=supplier.sid
+	</select>
+	<resultMap type="Merchandise" id="Merchandiseresult">
+		<result column="meid" property="meid"/>
+		<result column="mename" property="mename"/>
+		<result column="measurement" property="measurement"/>
+		<result column="saleprice" property="saleprice"/>
+		<result column="buyprice" property="buyprice"/>
+		<result column="mesrebate" property="mesrebate"/>
+		<result column="kind" property="kind"/>
+		<result column="factory" property="factory"/>
+		<result column="savedays" property="savedays"/>
+		<result column="isback" property="isback"/>
+		<result column="ischange" property="ischange"/>
+		<result column="mes" property="mes"/>
+		<result column="sdid" property="sdid"/>
+		<association property="second" resultMap="Secondresult" column="sdid" javaType="Second"/>
+		<association property="sidw" resultMap="Sidwresult" column="sid" javaType="Supplier"/>
+	</resultMap>
+	<resultMap type="Second" id="Secondresult">
+		<result column="sdid" property="sdid"/>
+		<result column="sdname" property="sdname"/>
+		<result column="sddescription" property="sddescription"/>
+		<result column="fid" property="fid"/>
+		<association property="first" resultMap="Firstresult" column="fid" javaType="First"/>
+	</resultMap>
+	<resultMap type="First" id="Firstresult">
+		<result column="fid" property="fid"/>
+		<result column="fname" property="fname"/>
+		<result column="fdescription" property="fdescription"/>
+	</resultMap>
+	<resultMap type="Supplier" id="Sidwresult">
+		<result column="sname" property="sname"/>
+	</resultMap>
+	<update id="updateMerchandise" parameterType="Merchandise">
+		update merchandise set mename=#{mename},saleprice=#{saleprice},mesrebate=#{mesrebate},
+		savedays=#{savedays},isback=#{isback},ischange=#{ischange},mes=#{mes} where meid=#{meid}
+	</update>
+	<insert id="insertMerchandise" parameterType="Merchandise">
+		insert into merchandise(mename,measurement,saleprice,buyprice,mesrebate,kind,factory,savedays,isback,ischange,mes,sdid,sid) values(#{mename},#{measurement},#{saleprice},#{buyprice},#{mesrebate},#{kind},#{factory},#{savedays},#{isback},#{ischange},#{mes},#{sdid},#{sid})
+	</insert>
 </mapper>

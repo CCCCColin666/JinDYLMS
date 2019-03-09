@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.neuedu.model.bean.Merchandise;
 import com.neuedu.model.bean.Orderinfo;
@@ -31,8 +32,25 @@ public class MerchandiseService {
 		}else{
 			MM.deleteMerchandise(meid);
 			return "1";
-		}
-		
+		}	
+	}
+	public List<Merchandise> selectMerchandise(int sdid,String mename){
+		Merchandise merchandise =new Merchandise();
+		merchandise.setSdid(sdid);
+		merchandise.setMename(mename);
+		return MM.Merchandiseone(merchandise);
+	}
+	public Merchandise selectxq(int meid){
+		return MM.xqMerchandise(meid);
+	}
+	public void  updateMerchandise(Merchandise merchandise){
+		MM.updateMerchandise(merchandise);
+	}
+	public void insertMerchandise(Merchandise merchandise, int sid, int mesrebate, int sdid){
+		merchandise.setSid(sid);
+		merchandise.setMesrebate(mesrebate);
+		merchandise.setSdid(sdid);
+		MM.insertMerchandise(merchandise);
 	}
 
 }

@@ -12,6 +12,7 @@
 	width: 100%;
 	height: 900px;
 	background-color: #F0F0F0;
+	margin-top: 5px;
 }
 #div1_flex{
 	display: flex;
@@ -103,18 +104,12 @@
 	background: url(img/distribution/slogen.bmp);
 	background-size: 100% 100%;
 }
-#div2{
-	margin-top: 5px;
-}
 #userinfo{
 	background-color: #1A2732;
 	width: 100%;
 	height: 40px;
 	color: white;
 	font-weight: bold;
-	
-	
-
 }
 #div1_menu{
 	width: 200px;
@@ -161,7 +156,6 @@
 	margin-left:45px;
 	text-align:center;
 	font-size:18px;
-	border-bottom:none;
 }
 .xiu{
 	float: right;
@@ -240,18 +234,69 @@
 .goods{
 	margin-top: 10px;
 }
-.shan3{
+.shan4{
 	float: right;
 	margin-top: -18px;
 	height: 20px;
 	width: 20px;
 	padding-right: 20px;
 }
-.xiu3{
+.xiu4{
 	float: right;
 	margin-top: -18px;
 	height: 20px;
 	width: 20px;
 	padding-right: 20px;
 }
-
+.before,.next{	
+	border: solid 1px black;
+	height:20px;
+	width:50px;
+	display:inline-block;
+	margin:10px
+}
+.fy{
+	position:relative;
+	margin-left:80%;
+	margin-top:80px;
+}
+#sp2>span{
+	width:100px;
+	text-align:center;
+}
+#btns{
+	width:80px;
+	border-radius:5px;
+	outline: none;
+}
+#seachs{
+	width:320px;
+	margin-right:25px;
+	outline:none;
+}
+#sp1{
+	text-align:center;
+	padding:40px;
+	font-size:20px;
+}
+#sp2{
+	text-align:center;
+	padding-bottom:40px;
+}
+.sp_table1{	
+	width:90%;
+	margin-top:50px;
+	margin-left:45px;
+}
+.sp_table1 input{
+	width:100%;
+	height:100%;
+	border:none;
+}
+#tjsp{
+	border: solid 1px black;
+	display:inline-block;
+	width:80px;
+	position:relative;
+	margin-left:20px;	
+}

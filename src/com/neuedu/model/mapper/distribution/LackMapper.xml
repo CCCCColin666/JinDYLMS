@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.model.mapper.distribution.LackMapper">
+	<select id="selectLack" resultMap="Lack_goodsseresult">
+		select * from orderinfo, lack_goods,merchandise,centerstorehouse
+		where lack_goods.orderid=orderinfo.orderid and orderinfo.itemid=merchandise.meid
+		and orderinfo.itemid=centerstorehouse.meid
+	</select>
+	<resultMap type="Lack_goods" id="Lack_goodsseresult">
+		<result column="lgid" property="lgid"/>
+		<result column="orderid" property="orderid"/>
+		<result column="lgstatus" property="lgstatus"/>
+		<association property="orderinfo"  resultMap="Orderinforesult" column="orderid" javaType="Orderinfo"/>
+	</resultMap>
+	<resultMap type="Orderinfo" id="Orderinforesult">
+		<result column="orderid" property="orderid"/>
+		<result column="itemid" property="itemid"/>
+		<result column="itemquantity" property="itemquantity"/>
+		<association property="itemidwo"  resultMap="Merchandiseresult" column="itemid" javaType="Merchandise"/>	
+		<association property="cs" resultMap="Centerresult" column="itemid" javaType="Centerstorehouse"/>	
+	</resultMap>
+	<resultMap type="Merchandise" id="Merchandiseresult">
+		<result column="meid" property="meid"/>
+		<result column="mename" property="mename"/>
+		<result column="kind" property="kind"/>
+		<result column="buyprice" property="buyprice"/>
+		<result column="measurement" property="measurement"/>
+	</resultMap>
+	<resultMap type="Centerstorehouse" id="Centerresult">
+		<result column="inventory" property="inventory"/>
+		<result column="cshmax" property="cshmax"/>
+		<result column="cshmin" property="cshmin"/>
+	</resultMap>
+</mapper>
